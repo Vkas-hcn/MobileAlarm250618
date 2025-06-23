@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="viewModel"
+        type="com.mobile.alarm.applications.mobilealarms.utils.LaunTool" />
+</data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_main">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alarm"
+            android:textColor="#FFFFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/back" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:text="Apply"
+            android:visibility="gone"
+            android:textColor="#FF3FECB2"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#FF3FECB2"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tv_apply"
+            app:layout_constraintStart_toStartOf="@+id/tv_apply"
+            app:layout_constraintTop_toBottomOf="@+id/tv_apply" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/con_item"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/radial_gradient_circle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aiv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_alarm"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/atv_play"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_next"
+            android:drawableStart="@drawable/ic_bofang"
+            android:drawablePadding="10dp"
+            android:gravity="center"
+            android:paddingHorizontal="50dp"
+            android:text="Play"
+            android:textColor="#FF000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/con_item" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recy_list_detail"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintTop_toBottomOf="@+id/atv_play"
+            tools:listitem="@layout/item_sou" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_d_s"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical"
+            android:padding="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/recy_list_detail">
+
+            <!-- Flash Setting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_flashlamp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Flash"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/kg_flash"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flash_on" />
+
+            </LinearLayout>
+
+            <!-- Vibration Setting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/ic_zhendong" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Vibration"
+                    android:textColor="#FFFFFFFF"
+                    android:textSize="12sp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/kg_vibration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flash_off" />
+
+            </LinearLayout>
+
+            <!-- Volume Setting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_yinliang" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Volume"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="12sp"/>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/kg_volume"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_flash_off" />
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekbar_volume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="100"
+                    android:progress="50"
+                    android:progressBackgroundTint="#3E6355"
+                    android:progressTint="#3FECB2"
+                    android:thumbTint="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!-- Duration Setting -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="4dp"
+                        android:src="@drawable/ic_chixushijian" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:text="Duration"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="12sp" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/kg_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:src="@drawable/ic_flash_off" />
+
+                </LinearLayout>
+
+                <!-- Duration Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_15s"
+                        android:layout_width="44dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_time"
+                        android:gravity="center"
+                        android:text="15s"
+                        android:layout_marginEnd="12dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/tv_30s"
+                        android:layout_width="44dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_time"
+                        android:gravity="center"
+                        android:text="30s"
+                        android:layout_marginEnd="12dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/tv_1m"
+                        android:layout_width="44dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_time"
+                        android:gravity="center"
+                        android:text="1m"
+                        android:layout_marginEnd="12dp"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="10sp" />
+                    <TextView
+                        android:id="@+id/tv_2m"
+                        android:layout_width="44dp"
+                        android:layout_height="22dp"
+                        android:background="@drawable/bg_time"
+                        android:gravity="center"
+                        android:text="2m"
+                        android:textColor="#FFFFFFFF"
+                        android:textSize="10sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

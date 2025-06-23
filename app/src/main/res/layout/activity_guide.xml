@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#2B2B2B"
+        android:orientation="vertical">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="56dp" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:id="@+id/indicatorContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="6dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="26dp"
+            android:orientation="horizontal" />
+
+        <LinearLayout
+            android:id="@+id/lin_sw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/bg_name"
+            android:gravity="center"
+            android:visibility="gone"
+            android:paddingVertical="14dp"
+            android:layout_marginTop="26dp"
+            android:paddingHorizontal="16dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_skip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Authority Name"
+                android:textColor="#FFFFFFFF"
+                android:textSize="14sp"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_flash_on"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_next"
+            android:layout_width="180dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_next"
+            android:gravity="center"
+            android:text="NEXT"
+            android:textColor="#FF000000"
+            android:textSize="14sp" />
+    </LinearLayout>
+</layout>

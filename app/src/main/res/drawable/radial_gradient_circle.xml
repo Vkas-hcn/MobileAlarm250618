@@ -1,0 +1,16 @@
+<!-- res/drawable/radial_gradient_circle.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <gradient
+        android:type="radial"
+        android:gradientRadius="50%"
+        android:centerX="0.5"
+        android:centerY="0.5"
+        android:startColor="#1C2320"
+        android:endColor="#6BB69A"/>
+
+    <size
+        android:width="120dp"
+        android:height="120dp"/>
+</shape>
