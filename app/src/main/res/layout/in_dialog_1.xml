@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="20dp"
             android:gravity="start"
-            android:text="Select FlashLight Launch as your default home app and enjoy a minimalist, efficient experience."
+            android:text="Select CellWhere PhoneFinder Launch as your default home app and enjoy a minimalist, efficient experience."
             android:textColor="#FFFFFFFF"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"

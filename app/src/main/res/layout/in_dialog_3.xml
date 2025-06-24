@@ -18,7 +18,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Select AppName Launch as \nyour default home app"
+            android:text="Select CellWhere PhoneFinder Launch as \nyour default home app"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
